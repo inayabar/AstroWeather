@@ -7,7 +7,9 @@
 
 import Foundation
 
+
 class ViewModelFactory: ObservableObject {
+    @MainActor
     func makeLocationWeatherViewModel(for location: Location) -> LocationWeatherViewModel {
         return LocationWeatherViewModel(location: location)
     }
