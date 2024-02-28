@@ -17,6 +17,7 @@
 		2CED82A22B8F8286002B5FE4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A12B8F8286002B5FE4 /* Location.swift */; };
 		2CED82A52B8F86B6002B5FE4 /* LocationWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A42B8F86B6002B5FE4 /* LocationWeatherView.swift */; };
 		2CED82A82B8F86E5002B5FE4 /* LocationWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A72B8F86E5002B5FE4 /* LocationWeatherViewModel.swift */; };
+		2CED82AA2B8F8A70002B5FE4 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A92B8F8A70002B5FE4 /* ViewModelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		2CED82A12B8F8286002B5FE4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2CED82A42B8F86B6002B5FE4 /* LocationWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherView.swift; sourceTree = "<group>"; };
 		2CED82A72B8F86E5002B5FE4 /* LocationWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherViewModel.swift; sourceTree = "<group>"; };
+		2CED82A92B8F8A70002B5FE4 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				2CED82A72B8F86E5002B5FE4 /* LocationWeatherViewModel.swift */,
+				2CED82A92B8F8A70002B5FE4 /* ViewModelFactory.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				2CED82A82B8F86E5002B5FE4 /* LocationWeatherViewModel.swift in Sources */,
 				2CED82792B8F7B7A002B5FE4 /* TabContainerView.swift in Sources */,
 				2CED82A22B8F8286002B5FE4 /* Location.swift in Sources */,
+				2CED82AA2B8F8A70002B5FE4 /* ViewModelFactory.swift in Sources */,
 				2CED82772B8F7B7A002B5FE4 /* AstroWeatherApp.swift in Sources */,
 				2CED82A52B8F86B6002B5FE4 /* LocationWeatherView.swift in Sources */,
 			);

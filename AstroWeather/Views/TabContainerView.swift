@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct TabContainerView: View {
+    @EnvironmentObject var viewModelFactory: ViewModelFactory
     @State private var currentTab = 0
     
     var body: some View {
         TabView(selection: $currentTab,
                 content:  {
             ForEach(Location.list.enumerated().map({$0}), id: \.element.id) { index, location  in
-                LocationWeatherView(viewModel: LocationWeatherViewModel(location: location))
+                LocationWeatherView(viewModel: viewModelFactory.makeLocationWeatherViewModel(for: location))
                     .tag(index)
             }
         })
@@ -25,4 +26,5 @@ struct TabContainerView: View {
 
 #Preview {
     TabContainerView()
+        .environmentObject(ViewModelFactory())
 }
