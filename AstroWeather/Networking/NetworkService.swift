@@ -33,6 +33,14 @@ final class NetworkService: NetworkServiceProtocol {
         
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        return try decoder.decode(request.responseType, from: data)
+        do {
+            return try decoder.decode(request.responseType, from: data)
+        } catch {
+            guard let error = error as? DecodingError else {
+                throw error
+            }
+            
+            throw NetworkError.decodingError(error)
+        }
     }
 }
