@@ -24,6 +24,7 @@
 		2CED82B52B8FB52F002B5FE4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82B42B8FB52F002B5FE4 /* NetworkError.swift */; };
 		2CED82B82B8FB745002B5FE4 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82B72B8FB745002B5FE4 /* WeatherData.swift */; };
 		2CED82BB2B8FBCB6002B5FE4 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82BA2B8FBCB6002B5FE4 /* WeatherService.swift */; };
+		2CED82C12B8FE105002B5FE4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82C02B8FE105002B5FE4 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		2CED82B42B8FB52F002B5FE4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		2CED82B72B8FB745002B5FE4 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		2CED82BA2B8FBCB6002B5FE4 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		2CED82C02B8FE105002B5FE4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				2CED82BA2B8FBCB6002B5FE4 /* WeatherService.swift */,
+				2CED82C02B8FE105002B5FE4 /* LocationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				2CED82BB2B8FBCB6002B5FE4 /* WeatherService.swift in Sources */,
 				2CED82A22B8F8286002B5FE4 /* Location.swift in Sources */,
 				2CED82AA2B8F8A70002B5FE4 /* ViewModelFactory.swift in Sources */,
+				2CED82C12B8FE105002B5FE4 /* LocationManager.swift in Sources */,
 				2CED82772B8F7B7A002B5FE4 /* AstroWeatherApp.swift in Sources */,
 				2CED82A52B8F86B6002B5FE4 /* LocationWeatherView.swift in Sources */,
 				2CED82B32B8FB490002B5FE4 /* NetworkRequest.swift in Sources */,
@@ -513,6 +517,7 @@
 				DEVELOPMENT_TEAM = 4KGM26JFXK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"AstroWeather uses your location to provide accurate and personalized weather forecasts.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -546,6 +551,7 @@
 				DEVELOPMENT_TEAM = 4KGM26JFXK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"AstroWeather uses your location to provide accurate and personalized weather forecasts.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
