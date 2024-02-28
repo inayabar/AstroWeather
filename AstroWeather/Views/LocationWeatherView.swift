@@ -33,6 +33,6 @@ struct LocationWeatherView: View {
 }
 
 #Preview {
-    let viewModel = LocationWeatherViewModel(location: Location.list.first!)
+    let viewModel = LocationWeatherViewModel(location: Location.list.first!, weatherFetcher: WeatherService(networkService: NetworkService()))
     return LocationWeatherView(viewModel: viewModel)
 }

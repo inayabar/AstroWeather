@@ -10,16 +10,19 @@ import Foundation
 @MainActor
 class LocationWeatherViewModel: ObservableObject {
     @Published var weather: WeatherData? = nil
-    private let weatherService: WeatherService = WeatherService(networkService: NetworkService())
     let location: Location
     
-    init(location: Location) {
+    private let weatherFetcher: WeatherFetcher
+    
+    
+    init(location: Location, weatherFetcher: WeatherFetcher) {
         self.location = location
+        self.weatherFetcher = weatherFetcher
     }
     
     func loadLocationWeather() async throws {
         do {
-            let data = try await weatherService.getWeather(for: location)
+            let data = try await weatherFetcher.fetchWeather(for: location)
             weather = data
         }
     }

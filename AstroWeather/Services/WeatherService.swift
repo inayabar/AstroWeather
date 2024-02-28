@@ -7,14 +7,18 @@
 
 import Foundation
 
-final class WeatherService {
-    let networkService: NetworkService
+protocol WeatherFetcher {
+    func fetchWeather(for: Location) async throws -> WeatherData
+}
+
+final class WeatherService: WeatherFetcher {
+    let networkService: NetworkServiceProtocol
     
     internal init(networkService: NetworkService) {
         self.networkService = networkService
     }
     
-    func getWeather(for location: Location) async throws -> WeatherData {
+    func fetchWeather(for location: Location) async throws -> WeatherData {
         guard let url = APIs.OpenWeatherMap.weather(latitude: location.latitude, longitude: location.longitude).url else {
             throw NetworkError.invalidUrlError
         }
