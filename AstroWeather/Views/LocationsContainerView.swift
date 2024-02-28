@@ -7,19 +7,15 @@
 
 import SwiftUI
 
-struct TabContainerView: View {
-    @ObservedObject var locationManager = LocationManager()
+struct LocationsContainerView: View {
+    @ObservedObject var viewModel: LocationsViewModel
     @EnvironmentObject var viewModelFactory: ViewModelFactory
     @State private var currentTab = 0
     
     var body: some View {
-        if let coordinate = locationManager.coordinate {
-            Text("Latitude: \(coordinate.latitude), Longitude: \(coordinate.longitude)".uppercased())
-        }
-        
         TabView(selection: $currentTab,
                 content:  {
-            ForEach(Location.list.enumerated().map({$0}), id: \.element.id) { index, location  in
+            ForEach(viewModel.locations.enumerated().map({$0}), id: \.element.id) { index, location  in
                 LocationWeatherView(viewModel: viewModelFactory.makeLocationWeatherViewModel(for: location))
                     .tag(index)
             }
@@ -30,6 +26,6 @@ struct TabContainerView: View {
 }
 
 #Preview {
-    TabContainerView()
+    LocationsContainerView(viewModel: LocationsViewModel(locationManager: LocationManager()))
         .environmentObject(ViewModelFactory())
 }
