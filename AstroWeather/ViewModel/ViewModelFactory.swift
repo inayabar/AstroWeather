@@ -7,8 +7,12 @@
 
 import Foundation
 
+
 class ViewModelFactory: ObservableObject {
+    let weatherFetcher: WeatherFetcher = WeatherService(networkService: NetworkService())
+    
+    @MainActor
     func makeLocationWeatherViewModel(for location: Location) -> LocationWeatherViewModel {
-        return LocationWeatherViewModel(location: location)
+        return LocationWeatherViewModel(location: location, weatherFetcher: weatherFetcher)
     }
 }
