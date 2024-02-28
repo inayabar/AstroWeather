@@ -11,7 +11,7 @@ import SwiftUI
 struct AstroWeatherApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabContainerView()
         }
     }
 }
