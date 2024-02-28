@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct AstroWeatherApp: App {
+    let viewModelFactory = ViewModelFactory()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabContainerView()
+                .environmentObject(viewModelFactory)
         }
     }
 }

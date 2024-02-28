@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2CED82772B8F7B7A002B5FE4 /* AstroWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82762B8F7B7A002B5FE4 /* AstroWeatherApp.swift */; };
-		2CED82792B8F7B7A002B5FE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82782B8F7B7A002B5FE4 /* ContentView.swift */; };
+		2CED82792B8F7B7A002B5FE4 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82782B8F7B7A002B5FE4 /* TabContainerView.swift */; };
 		2CED827B2B8F7B7D002B5FE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CED827A2B8F7B7D002B5FE4 /* Assets.xcassets */; };
 		2CED827E2B8F7B7D002B5FE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CED827D2B8F7B7D002B5FE4 /* Preview Assets.xcassets */; };
 		2CED82882B8F7B7D002B5FE4 /* AstroWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82872B8F7B7D002B5FE4 /* AstroWeatherTests.swift */; };
 		2CED82922B8F7B7D002B5FE4 /* AstroWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82912B8F7B7D002B5FE4 /* AstroWeatherUITests.swift */; };
 		2CED82942B8F7B7D002B5FE4 /* AstroWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82932B8F7B7D002B5FE4 /* AstroWeatherUITestsLaunchTests.swift */; };
+		2CED82A22B8F8286002B5FE4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A12B8F8286002B5FE4 /* Location.swift */; };
+		2CED82A52B8F86B6002B5FE4 /* LocationWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A42B8F86B6002B5FE4 /* LocationWeatherView.swift */; };
+		2CED82A82B8F86E5002B5FE4 /* LocationWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A72B8F86E5002B5FE4 /* LocationWeatherViewModel.swift */; };
+		2CED82AA2B8F8A70002B5FE4 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A92B8F8A70002B5FE4 /* ViewModelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		2CED82732B8F7B7A002B5FE4 /* AstroWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstroWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CED82762B8F7B7A002B5FE4 /* AstroWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroWeatherApp.swift; sourceTree = "<group>"; };
-		2CED82782B8F7B7A002B5FE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2CED82782B8F7B7A002B5FE4 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
 		2CED827A2B8F7B7D002B5FE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CED827D2B8F7B7D002B5FE4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CED82832B8F7B7D002B5FE4 /* AstroWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,10 @@
 		2CED828D2B8F7B7D002B5FE4 /* AstroWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CED82912B8F7B7D002B5FE4 /* AstroWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroWeatherUITests.swift; sourceTree = "<group>"; };
 		2CED82932B8F7B7D002B5FE4 /* AstroWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2CED82A12B8F8286002B5FE4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		2CED82A42B8F86B6002B5FE4 /* LocationWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherView.swift; sourceTree = "<group>"; };
+		2CED82A72B8F86E5002B5FE4 /* LocationWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherViewModel.swift; sourceTree = "<group>"; };
+		2CED82A92B8F8A70002B5FE4 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +102,10 @@
 		2CED82752B8F7B7A002B5FE4 /* AstroWeather */ = {
 			isa = PBXGroup;
 			children = (
+				2CED82A62B8F86D1002B5FE4 /* ViewModel */,
+				2CED82A32B8F83CA002B5FE4 /* Views */,
+				2CED82A02B8F825B002B5FE4 /* Model */,
 				2CED82762B8F7B7A002B5FE4 /* AstroWeatherApp.swift */,
-				2CED82782B8F7B7A002B5FE4 /* ContentView.swift */,
 				2CED827A2B8F7B7D002B5FE4 /* Assets.xcassets */,
 				2CED827C2B8F7B7D002B5FE4 /* Preview Content */,
 			);
@@ -125,6 +135,32 @@
 				2CED82932B8F7B7D002B5FE4 /* AstroWeatherUITestsLaunchTests.swift */,
 			);
 			path = AstroWeatherUITests;
+			sourceTree = "<group>";
+		};
+		2CED82A02B8F825B002B5FE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2CED82A12B8F8286002B5FE4 /* Location.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2CED82A32B8F83CA002B5FE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CED82782B8F7B7A002B5FE4 /* TabContainerView.swift */,
+				2CED82A42B8F86B6002B5FE4 /* LocationWeatherView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CED82A62B8F86D1002B5FE4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2CED82A72B8F86E5002B5FE4 /* LocationWeatherViewModel.swift */,
+				2CED82A92B8F8A70002B5FE4 /* ViewModelFactory.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CED82792B8F7B7A002B5FE4 /* ContentView.swift in Sources */,
+				2CED82A82B8F86E5002B5FE4 /* LocationWeatherViewModel.swift in Sources */,
+				2CED82792B8F7B7A002B5FE4 /* TabContainerView.swift in Sources */,
+				2CED82A22B8F8286002B5FE4 /* Location.swift in Sources */,
+				2CED82AA2B8F8A70002B5FE4 /* ViewModelFactory.swift in Sources */,
 				2CED82772B8F7B7A002B5FE4 /* AstroWeatherApp.swift in Sources */,
+				2CED82A52B8F86B6002B5FE4 /* LocationWeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
