@@ -12,15 +12,29 @@ struct TabContainerView: View {
     @State private var currentTab = 0
     
     var body: some View {
-        TabView(selection: $currentTab,
-                content:  {
-            ForEach(Location.list.enumerated().map({$0}), id: \.element.id) { index, location  in
-                LocationWeatherView(viewModel: viewModelFactory.makeLocationWeatherViewModel(for: location))
-                    .tag(index)
+        NavigationView {
+            ZStack(alignment: .bottom) {
+                TabView(selection: $currentTab,
+                        content:  {
+                    ForEach(Location.list.enumerated().map({$0}), id: \.element.id) { index, location  in
+                        LocationWeatherView(viewModel: viewModelFactory.makeLocationWeatherViewModel(for: location))
+                            .tag(index)
+                    }
+                })
+                .tabViewStyle(.page)
+                .indexViewStyle(.page(backgroundDisplayMode: .always))
+                
+                HStack {
+                    Spacer()
+                    NavigationLink(destination: {
+                        LocationListView()
+                    }, label: {
+                        Label("", systemImage: "list.dash")
+                    })
+                    .padding([.trailing, .bottom])
+                }
             }
-        })
-        .tabViewStyle(PageTabViewStyle())
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        }
     }
 }
 
