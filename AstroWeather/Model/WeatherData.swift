@@ -10,7 +10,7 @@ import Foundation
 struct WeatherData: Decodable {
     private let weather: [Weather]
     private let main: Main
-    private let visibility: Int
+    let visibility: Int
     private let dt: Int
     private let timezone: Int
     let sys: Sys
@@ -64,10 +64,6 @@ struct WeatherData: Decodable {
         let speed: Double
         let deg: Int
         let gust: Double?
-        
-        var formattedSpeed: String {
-            return String(format: "%.1f km/h", speed)
-        }
     }
     
     struct Clouds: Decodable {

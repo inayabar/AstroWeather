@@ -7,40 +7,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CA21F7BC-91EE-4D37-A9A2-DD5E4CC4514D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AstroWeather/Networking/API.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "baseURL"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2FF184C5-8B79-456E-A407-56BA57FE18B6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AstroWeather/Services/WeatherService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "fetchWeather(for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "5FBC7537-4440-414B-B4F0-60E9FA3EBBA9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AstroWeather/ViewModel/LocationsViewModel.swift"
@@ -50,6 +18,101 @@
             endingLineNumber = "25"
             landmarkName = "loadLocations()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5FBC7537-4440-414B-B4F0-60E9FA3EBBA9 - 1f31089640079514"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AstroWeather.LocationsViewModel.loadLocations() -&gt; ()"
+                  moduleName = "AstroWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/inaki/Projects/iOS/AstroWeather/AstroWeather/ViewModel/LocationsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "504">
+               </Location>
+               <Location
+                  uuid = "5FBC7537-4440-414B-B4F0-60E9FA3EBBA9 - 1f31089640079514"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AstroWeather.LocationsViewModel.loadLocations() -&gt; ()"
+                  moduleName = "AstroWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/inaki/Projects/iOS/AstroWeather/AstroWeather/ViewModel/LocationsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "584">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52560A67-3499-4458-BE81-AC3D87259C62"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AstroWeather/ViewModel/LocationWeatherViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "visibilityDescription"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "52560A67-3499-4458-BE81-AC3D87259C62 - 3e5afa132be78928"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AstroWeather.LocationWeatherViewModel.handleErrorMessage(Swift.Error) -&gt; ()"
+                  moduleName = "AstroWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/inaki/Projects/iOS/AstroWeather/AstroWeather/ViewModel/LocationWeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "828">
+               </Location>
+               <Location
+                  uuid = "52560A67-3499-4458-BE81-AC3D87259C62 - 1f487c11c59a827"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AstroWeather.LocationWeatherViewModel.visibilityDescription.getter : Swift.String"
+                  moduleName = "AstroWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/inaki/Projects/iOS/AstroWeather/AstroWeather/ViewModel/LocationWeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "268">
+               </Location>
+               <Location
+                  uuid = "52560A67-3499-4458-BE81-AC3D87259C62 - 1f487c11c59a827"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AstroWeather.LocationWeatherViewModel.visibilityDescription.getter : Swift.String"
+                  moduleName = "AstroWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/inaki/Projects/iOS/AstroWeather/AstroWeather/ViewModel/LocationWeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "284">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

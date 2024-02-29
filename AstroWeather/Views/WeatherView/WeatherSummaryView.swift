@@ -30,10 +30,12 @@ struct WeatherSummaryView: View {
             
             if let description = weather.description {
                 Text(description.capitalized)
+                    .fontWeight(.medium)
             }
             
             Text("Máxima: \(weather.maximumTemperature)º Mínima: \(weather.minimumTemperature)º")
-        }
+            .fontWeight(.medium)
+        }.shadow(radius: 1)
     }
 }
 

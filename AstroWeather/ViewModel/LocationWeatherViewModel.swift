@@ -38,6 +38,29 @@ class LocationWeatherViewModel: ObservableObject {
         return weather?.name ?? location.name
     }
     
+    var isCurrentLocation: Bool {
+        return location.isCurrent
+    }
+    
+    var visibilityDescription: String {
+        guard let visibility = weather?.visibility else {
+            return ""
+        }
+        
+        switch visibility {
+        case 0..<1000:
+            return "Muy poca visibilidad"
+        case 1000..<3000:
+            return "Visibilidad reducida"
+        case 3000..<6000:
+            return "Visibilidad moderada"
+        case 6000..<10000:
+            return "Completamente despejada"
+        default:
+            return ""
+        }
+    }
+    
     func loadLocationWeather() async {
         do {
             let data = try await weatherFetcher.fetchWeather(for: location)
@@ -45,10 +68,6 @@ class LocationWeatherViewModel: ObservableObject {
         } catch {
             handleErrorMessage(error)
         }
-    }
-    
-    func isCurrentLocation() -> Bool {
-        return location.isCurrent
     }
     
     private func handleErrorMessage(_ error: Error) {

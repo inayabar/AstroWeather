@@ -14,47 +14,44 @@ struct LocationWeatherView: View {
         ZStack {
             ScrollView {
                 if let weather = viewModel.weather {
-                    WeatherSummaryView(locationName: viewModel.locationName, weather: weather, isCurrent: viewModel.isCurrentLocation())
+                    WeatherSummaryView(locationName: viewModel.locationName, weather: weather, isCurrent: viewModel.isCurrentLocation)
+                        .padding([.top, .bottom])
                     
                     HStack(spacing: 32) {
                         RoundedTranslucentBox {
-                            VStack {
-                                Text("Visibilidad")
-                                    .font(.title2)
-                                    .bold()
+                            VStack(alignment: .leading) {
+                                Label("Visibilidad", systemImage: "eye")
+                                    .font(.subheadline)
+                                    .padding(.bottom)
+                                
                                 Text("\(weather.formattedVisibility)")
                                     .font(.title2)
+                                
+                                Text(viewModel.visibilityDescription)
+                                    .font(.caption)
                             }
                             .padding()
                         }
                         
                         RoundedTranslucentBox {
-                            VStack {
-                                Text("Nubes")
-                                    .font(.title2)
-                                    .bold()
+                            VStack(alignment: .leading) {
+                                Label("Nubes", systemImage: "cloud")
+                                    .font(.subheadline)
+                                    .padding(.bottom)
+                                    .padding(.trailing)
+                                
+                                Spacer()
                                 
                                 Text("\(weather.clouds.all) %")
                                     .font(.title2)
+                                    .padding(.bottom)
                             }
                             .padding()
                         }
                     }
                     .padding()
                     
-                    HStack(spacing: 32) {
-                        RoundedTranslucentBox {
-                            VStack {
-                                Text("Viento")
-                                    .font(.title2)
-                                
-                                Text("\(weather.wind.formattedSpeed)")
-                                    .font(.title)
-                            }
-                            .padding()
-                        }
-                    }
-                    .padding()
+                    WindView(wind: weather.wind)
                     
                 } else {
                     WeatherSkeletonView(location: viewModel.location)
