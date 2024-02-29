@@ -15,8 +15,15 @@ struct LocationWeatherView: View {
             ScrollView {
                 if let weather = viewModel.weather {
                     VStack(alignment: .center) {
-                        Text(weather.name)
-                            .font(.title)
+                        HStack {
+                            Text(weather.name)
+                                .font(.title)
+                            
+                            if viewModel.isCurrentLocation() {
+                                Image(systemName: "location")
+                                    .font(.system(size: 20))
+                            }
+                        }
                         
                         Text("  \(weather.temperature)°")
                             .font(.system(size: 64))
@@ -104,6 +111,6 @@ struct LocationWeatherView: View {
 }
 
 #Preview {
-    let viewModel = LocationWeatherViewModel(location: Location.list.first!, weatherFetcher: MockWeatherFetcher())
+    let viewModel = LocationWeatherViewModel(location: MockLocation.current, weatherFetcher: MockWeatherFetcher())
     return LocationWeatherView(viewModel: viewModel)
 }

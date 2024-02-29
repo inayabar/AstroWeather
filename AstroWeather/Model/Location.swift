@@ -7,6 +7,7 @@
 
 import Foundation
 struct Location: Identifiable, Hashable {
+    var isCurrent: Bool = false
     let id: UUID
     let name: String
     let latitude: Double

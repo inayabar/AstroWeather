@@ -32,6 +32,10 @@ class LocationWeatherViewModel: ObservableObject {
         }
     }
     
+    func isCurrentLocation() -> Bool {
+        return location.isCurrent
+    }
+    
     private func handleErrorMessage(_ error: Error) {
         if let error = error as? NetworkError {
             switch error {
