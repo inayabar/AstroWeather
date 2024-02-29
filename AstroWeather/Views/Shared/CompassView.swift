@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CompassView: View {
+    @State var currentDegrees: Double = 0
     let directionDegrees: Double
     
     var body: some View {
@@ -21,7 +22,7 @@ struct CompassView: View {
                     Image(systemName: "arrow.up")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .rotationEffect(.degrees(directionDegrees))
+                        .rotationEffect(.degrees(currentDegrees))
                         
                     Text("O")
                         .font(.callout)
@@ -32,6 +33,11 @@ struct CompassView: View {
             
             Circle()
                 .stroke(style: StrokeStyle(lineWidth: 2, lineCap: .butt, lineJoin: .miter, miterLimit: 0, dash: [1, 3], dashPhase: 0))
+        }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 1)) {
+                currentDegrees = directionDegrees
+            }
         }
     }
 }

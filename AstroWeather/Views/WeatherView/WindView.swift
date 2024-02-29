@@ -11,35 +11,32 @@ struct WindView: View {
     let wind: WeatherData.Wind
     
     var body: some View {
-        HStack(spacing: 32) {
-            RoundedTranslucentBox {
-                HStack(spacing: 32) {
-                    VStack(alignment: .leading) {
-                        Label("VIENTO", systemImage: "wind")
+        RoundedTranslucentBox {
+            HStack(spacing: 32) {
+                VStack(alignment: .leading) {
+                    Label("VIENTO", systemImage: "wind")
+                        .font(.subheadline)
+                        .padding(.bottom)
+                        .padding(.trailing)
+                    HStack {
+                        Text(String(format: "%.1f", wind.speed))
+                            .font(.title)
+                            .bold()
+                        
+                        Text("km/h")
                             .font(.subheadline)
-                            .padding(.bottom)
-                            .padding(.trailing)
-                        HStack {
-                            Text(String(format: "%.1f", wind.speed))
-                                .font(.title)
-                                .bold()
-                            
-                            Text("km/h")
-                                .font(.subheadline)
-                        }
                     }
-                    .padding(.leading)
-                    
-                    Spacer()
-                    
-                    CompassView(directionDegrees: Double(wind.deg))
-                        .frame(width: 80, height: 80)
-                        .padding(.trailing, 20)
                 }
-                .padding()
+                .padding(.leading)
+                
+                Spacer()
+                
+                CompassView(directionDegrees: Double(wind.deg))
+                    .frame(width: 80, height: 80)
+                    .padding(.trailing, 20)
             }
+            .padding()
         }
-        .padding()
     }
 }
 
