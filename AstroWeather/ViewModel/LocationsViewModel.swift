@@ -22,7 +22,7 @@ class LocationsViewModel: ObservableObject {
     private func loadLocations() {
         var locations: [Location] = []
         if let coordinate = locationManager.coordinate {
-            locations.append(Location(id: UUID(), name: "Current location", latitude: coordinate.latitude.magnitude, longitude: coordinate.longitude.magnitude))
+            locations.append(Location(id: UUID(), name: "Current location", latitude: coordinate.latitude, longitude: coordinate.longitude))
         }
         
         locations.append(contentsOf: Location.list)
