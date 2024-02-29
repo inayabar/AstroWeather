@@ -8,14 +8,30 @@
 import Foundation
 
 struct WeatherData: Decodable {
-    let weather: [Weather]
-    let main: Main
-    let visibility: Int
-    let wind: Wind
-    let clouds: Clouds
-    let dt: Int
-    let timezone: Int
+    private let weather: [Weather]
+    private let main: Main
+    private let visibility: Int
+    private let wind: Wind
+    private let clouds: Clouds
+    private let dt: Int
+    private let timezone: Int
     let name: String
+    
+    var description: String? {
+        return weather.first?.description
+    }
+    
+    var temperature: Int {
+        return Int(main.temp)
+    }
+    
+    var min: Int {
+        return Int(main.tempMin)
+    }
+    
+    var max: Int {
+        return Int(main.tempMax)
+    }
     
     struct Weather: Decodable {
         let id: Int

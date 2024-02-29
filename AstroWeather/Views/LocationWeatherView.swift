@@ -12,27 +12,62 @@ struct LocationWeatherView: View {
     
     var body: some View {
         ZStack {
-            if let weather = viewModel.weather {
-                VStack {
-                    Text("\(weather.main.temp)°")
-                        .font(.largeTitle)
-                        .bold()
+            ScrollView {
+                if let weather = viewModel.weather {
+                    VStack(alignment: .center) {
+                        Text(weather.name)
+                            .font(.title)
+                        
+                        Text("  \(weather.temperature)°")
+                            .font(.system(size: 64))
+                            .bold()
+                        
+                        if let description = weather.description {
+                            Text(description.capitalized)
+                        }
+                    }
                     
+                    HStack(spacing: 32) {
+                        RoundedTranslucentBox {
+                            VStack {
+                                Text("Mínima")
+                                    .font(.title2)
+                                Text("\(weather.min)°")
+                                    .font(.title)
+                            }
+                            .padding()
+                        }
+                        
+                        RoundedTranslucentBox {
+                            VStack {
+                                Text("Máxima")
+                                    .font(.title2)
+                                
+                                Text("\(weather.max)°")
+                                    .font(.title)
+                            }
+                            .padding()
+                        }
+                    }
+                    .padding()
+                    
+                } else {
+                    // TODO: Skeleton view
                     Text(viewModel.location.name)
+                    ProgressView()
                 }
-            } else {
-                Text(viewModel.location.name)
             }
+            .padding()
         }
         .onAppear {
             Task {
-                try! await viewModel.loadLocationWeather()
+                await viewModel.loadLocationWeather()
             }
         }
     }
 }
 
 #Preview {
-    let viewModel = LocationWeatherViewModel(location: Location.list.first!, weatherFetcher: WeatherService(networkService: NetworkService()))
+    let viewModel = LocationWeatherViewModel(location: Location.list.first!, weatherFetcher: MockWeatherFetcher())
     return LocationWeatherView(viewModel: viewModel)
 }
