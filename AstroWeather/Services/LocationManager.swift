@@ -36,6 +36,8 @@ extension LocationManager: CLLocationManagerDelegate {
             return
         }
         
+        print("Manager updated location: \(location)")
+        
         coordinate = location.coordinate
         delegate?.didUpdateLocation()
     }

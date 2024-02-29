@@ -90,9 +90,7 @@ struct LocationWeatherView: View {
                     .padding()
                     
                 } else {
-                    // TODO: Skeleton view
-                    Text(viewModel.location.name)
-                    ProgressView()
+                    WeatherSkeletonView(location: viewModel.location)
                 }
             }
             .padding()

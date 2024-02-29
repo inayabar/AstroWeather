@@ -10,6 +10,7 @@ import CoreLocation
 
 class LocationsViewModel: ObservableObject {
     @Published var locations: [Location] = []
+    private var currentCoordinate: CLLocationCoordinate2D? = nil
     private var locationManager: LocationManagerProtocol
     
     init(locationManager: LocationManagerProtocol) {
@@ -32,6 +33,13 @@ class LocationsViewModel: ObservableObject {
 
 extension LocationsViewModel: LocationManagerDelegate {
     func didUpdateLocation() {
-        self.loadLocations()
+        guard let newCoordinate = locationManager.coordinate else {
+            return
+        }
+        
+        if let oldCoordinate = self.currentCoordinate, oldCoordinate.latitude != newCoordinate.latitude || oldCoordinate.longitude != newCoordinate.longitude {
+            self.currentCoordinate = newCoordinate
+            self.loadLocations()
+        }
     }
 }
