@@ -13,7 +13,7 @@ struct AstroWeatherApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabContainerView()
+            LocationsContainerView(viewModel: viewModelFactory.makeLocationsViewModel())
                 .environmentObject(viewModelFactory)
         }
     }
