@@ -37,7 +37,7 @@ class LocationWeatherViewModel: ObservableObject {
             switch error {
             case .httpError(let statusCode):
                 self.errorMessage = "This location created an invalid request. Please try again (http code: \(statusCode))"
-            case .decodingError(let error):
+            case .decodingError(_):
                 self.errorMessage = "There was an error while parsing the response. Please try again"
             case .invalidUrlError:
                 self.errorMessage = "This location generated an invalid request. Please try again"

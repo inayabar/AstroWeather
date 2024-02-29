@@ -32,7 +32,7 @@ struct LocationWeatherView: View {
                             VStack {
                                 Text("Mínima")
                                     .font(.title2)
-                                Text("\(weather.min)°")
+                                Text("\(weather.minimumTemperature)°")
                                     .font(.title)
                             }
                             .padding()
@@ -43,7 +43,45 @@ struct LocationWeatherView: View {
                                 Text("Máxima")
                                     .font(.title2)
                                 
-                                Text("\(weather.max)°")
+                                Text("\(weather.maximumTemperature)°")
+                                    .font(.title)
+                            }
+                            .padding()
+                        }
+                    }
+                    .padding()
+                    
+                    HStack(spacing: 32) {
+                        RoundedTranslucentBox {
+                            VStack {
+                                Text("Visibilidad")
+                                    .font(.title2)
+                                Text("\(weather.formattedVisibility)")
+                                    .font(.title)
+                            }
+                            .padding()
+                        }
+                        
+                        RoundedTranslucentBox {
+                            VStack {
+                                Text("Nubes")
+                                    .font(.title2)
+                                
+                                Text("\(weather.clouds.all) %")
+                                    .font(.title)
+                            }
+                            .padding()
+                        }
+                    }
+                    .padding()
+                    
+                    HStack(spacing: 32) {
+                        RoundedTranslucentBox {
+                            VStack {
+                                Text("Viento")
+                                    .font(.title2)
+                                
+                                Text("\(weather.wind.formattedSpeed)")
                                     .font(.title)
                             }
                             .padding()
