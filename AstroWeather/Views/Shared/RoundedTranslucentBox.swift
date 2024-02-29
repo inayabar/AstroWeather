@@ -17,8 +17,8 @@ struct RoundedTranslucentBox<Content> : View where Content : View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color.gray.opacity(0.4))
-                .blur(radius: 1)
+                .fill(Color.secondary.opacity(0.4))
+                .blur(radius: 0.8)
             
             content()
         }

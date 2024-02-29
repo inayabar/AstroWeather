@@ -20,6 +20,7 @@ struct LocationsContainerView: View {
                     .tag(index)
             }
         })
+        .ignoresSafeArea()
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }

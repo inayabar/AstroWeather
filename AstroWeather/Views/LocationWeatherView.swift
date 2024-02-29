@@ -14,57 +14,16 @@ struct LocationWeatherView: View {
         ZStack {
             ScrollView {
                 if let weather = viewModel.weather {
-                    VStack(alignment: .center) {
-                        HStack {
-                            Text(weather.name)
-                                .font(.title)
-                            
-                            if viewModel.isCurrentLocation() {
-                                Image(systemName: "location")
-                                    .font(.system(size: 20))
-                            }
-                        }
-                        
-                        Text("  \(weather.temperature)°")
-                            .font(.system(size: 64))
-                            .bold()
-                        
-                        if let description = weather.description {
-                            Text(description.capitalized)
-                        }
-                    }
-                    
-                    HStack(spacing: 32) {
-                        RoundedTranslucentBox {
-                            VStack {
-                                Text("Mínima")
-                                    .font(.title2)
-                                Text("\(weather.minimumTemperature)°")
-                                    .font(.title)
-                            }
-                            .padding()
-                        }
-                        
-                        RoundedTranslucentBox {
-                            VStack {
-                                Text("Máxima")
-                                    .font(.title2)
-                                
-                                Text("\(weather.maximumTemperature)°")
-                                    .font(.title)
-                            }
-                            .padding()
-                        }
-                    }
-                    .padding()
+                    WeatherSummaryView(locationName: viewModel.locationName, weather: weather, isCurrent: viewModel.isCurrentLocation())
                     
                     HStack(spacing: 32) {
                         RoundedTranslucentBox {
                             VStack {
                                 Text("Visibilidad")
                                     .font(.title2)
+                                    .bold()
                                 Text("\(weather.formattedVisibility)")
-                                    .font(.title)
+                                    .font(.title2)
                             }
                             .padding()
                         }
@@ -73,9 +32,10 @@ struct LocationWeatherView: View {
                             VStack {
                                 Text("Nubes")
                                     .font(.title2)
+                                    .bold()
                                 
                                 Text("\(weather.clouds.all) %")
-                                    .font(.title)
+                                    .font(.title2)
                             }
                             .padding()
                         }

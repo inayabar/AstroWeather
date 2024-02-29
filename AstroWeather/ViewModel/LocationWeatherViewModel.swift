@@ -34,6 +34,10 @@ class LocationWeatherViewModel: ObservableObject {
         return icon.contains("n")
     }
     
+    var locationName: String {
+        return weather?.name ?? location.name
+    }
+    
     func loadLocationWeather() async {
         do {
             let data = try await weatherFetcher.fetchWeather(for: location)
