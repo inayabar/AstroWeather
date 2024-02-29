@@ -18,8 +18,6 @@ struct LocationWeatherView: View {
                         HStack {
                             Text(weather.name)
                                 .font(.title)
-                                //.foregroundColor(.white)
-                            
                             
                             if viewModel.isCurrentLocation() {
                                 Image(systemName: "location")
@@ -104,7 +102,8 @@ struct LocationWeatherView: View {
             }
             .padding()
         }
-        .background(Image("13d"))
+        .foregroundColor(viewModel.isNight ? .white : .black)
+        .background(Image(viewModel.icon ?? ""))
         .onAppear {
             Task {
                 await viewModel.loadLocationWeather()

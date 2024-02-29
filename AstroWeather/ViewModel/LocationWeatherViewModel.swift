@@ -12,8 +12,7 @@ class LocationWeatherViewModel: ObservableObject {
     @Published var weather: WeatherData? = nil
     @Published var isShowingError: Bool = false
     @Published var errorMessage = ""
-    
-    let location: Location
+    @Published var location: Location
     
     private let weatherFetcher: WeatherFetcher
     
@@ -21,6 +20,18 @@ class LocationWeatherViewModel: ObservableObject {
     init(location: Location, weatherFetcher: WeatherFetcher) {
         self.location = location
         self.weatherFetcher = weatherFetcher
+    }
+    
+    var icon: String? {
+        return weather?.icon
+    }
+    
+    var isNight: Bool {
+        guard let icon = icon else {
+            return false
+        }
+        
+        return icon.contains("n")
     }
     
     func loadLocationWeather() async {

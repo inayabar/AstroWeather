@@ -13,6 +13,7 @@ struct WeatherData: Decodable {
     private let visibility: Int
     private let dt: Int
     private let timezone: Int
+    let sys: Sys
     let wind: Wind
     let clouds: Clouds
     let name: String
@@ -32,6 +33,10 @@ struct WeatherData: Decodable {
     
     var maximumTemperature: Int {
         return Int(main.tempMax)
+    }
+    
+    var icon: String? {
+        return weather.first?.icon
     }
     
     var formattedVisibility: String {
@@ -70,7 +75,7 @@ struct WeatherData: Decodable {
     }
     
     struct Sys: Decodable {
-        let sunrise: Int
-        let sunset: Int
+        let sunrise: Double
+        let sunset: Double
     }
 }
