@@ -54,7 +54,7 @@ class LocationWeatherViewModel: ObservableObject {
             return "Visibilidad reducida"
         case 3000..<6000:
             return "Visibilidad moderada"
-        case 6000..<10000:
+        case 6000...:
             return "Completamente despejada"
         default:
             return ""

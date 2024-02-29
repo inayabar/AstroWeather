@@ -20,7 +20,7 @@ struct LocationWeatherView: View {
                     HStack(spacing: 32) {
                         RoundedTranslucentBox {
                             VStack(alignment: .leading) {
-                                Label("Visibilidad", systemImage: "eye")
+                                Label("VISIBILIDAD", systemImage: "eye")
                                     .font(.subheadline)
                                     .padding(.bottom)
                                 
@@ -35,7 +35,7 @@ struct LocationWeatherView: View {
                         
                         RoundedTranslucentBox {
                             VStack(alignment: .leading) {
-                                Label("Nubes", systemImage: "cloud")
+                                Label("NUBES", systemImage: "cloud")
                                     .font(.subheadline)
                                     .padding(.bottom)
                                     .padding(.trailing)

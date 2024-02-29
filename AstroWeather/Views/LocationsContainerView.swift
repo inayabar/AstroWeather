@@ -19,6 +19,7 @@ struct LocationsContainerView: View {
                 LocationWeatherView(viewModel: viewModelFactory.makeLocationWeatherViewModel(for: location))
                     .tag(index)
             }
+            .padding(.vertical)
         })
         .ignoresSafeArea()
         .tabViewStyle(PageTabViewStyle())

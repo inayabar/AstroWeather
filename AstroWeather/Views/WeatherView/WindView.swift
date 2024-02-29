@@ -15,7 +15,7 @@ struct WindView: View {
             RoundedTranslucentBox {
                 HStack(spacing: 32) {
                     VStack(alignment: .leading) {
-                        Label("Viento", systemImage: "wind")
+                        Label("VIENTO", systemImage: "wind")
                             .font(.subheadline)
                             .padding(.bottom)
                             .padding(.trailing)
