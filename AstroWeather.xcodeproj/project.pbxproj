@@ -36,6 +36,7 @@
 		2CED82DB2B911730002B5FE4 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82DA2B911730002B5FE4 /* CompassView.swift */; };
 		2CED82DE2B911B8C002B5FE4 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82DD2B911B8C002B5FE4 /* WindView.swift */; };
 		2CED82E12B915B55002B5FE4 /* WeatherInfoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82E02B915B55002B5FE4 /* WeatherInfoContainer.swift */; };
+		2CED82E32B917D00002B5FE4 /* ErrorSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82E22B917D00002B5FE4 /* ErrorSnackbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		2CED82DA2B911730002B5FE4 /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		2CED82DD2B911B8C002B5FE4 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
 		2CED82E02B915B55002B5FE4 /* WeatherInfoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoContainer.swift; sourceTree = "<group>"; };
+		2CED82E22B917D00002B5FE4 /* ErrorSnackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSnackbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,7 +244,7 @@
 				2CED82C92B9037F6002B5FE4 /* RoundedTranslucentBox.swift */,
 				2CED82CD2B90CE25002B5FE4 /* SkeletonRectangle.swift */,
 				2CED82DA2B911730002B5FE4 /* CompassView.swift */,
-				2CED82E02B915B55002B5FE4 /* WeatherInfoContainer.swift */,
+				2CED82E22B917D00002B5FE4 /* ErrorSnackbar.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -250,6 +252,7 @@
 		2CED82DC2B911B64002B5FE4 /* WeatherView */ = {
 			isa = PBXGroup;
 			children = (
+				2CED82E02B915B55002B5FE4 /* WeatherInfoContainer.swift */,
 				2CED82CF2B90CE43002B5FE4 /* WeatherSkeletonView.swift */,
 				2CED82D42B9109BD002B5FE4 /* WeatherSummaryView.swift */,
 				2CED82DD2B911B8C002B5FE4 /* WindView.swift */,
@@ -401,6 +404,7 @@
 				2CED82B82B8FB745002B5FE4 /* WeatherData.swift in Sources */,
 				2CED82BB2B8FBCB6002B5FE4 /* WeatherService.swift in Sources */,
 				2CED82A22B8F8286002B5FE4 /* Location.swift in Sources */,
+				2CED82E32B917D00002B5FE4 /* ErrorSnackbar.swift in Sources */,
 				2CED82AA2B8F8A70002B5FE4 /* ViewModelFactory.swift in Sources */,
 				2CED82C12B8FE105002B5FE4 /* LocationManager.swift in Sources */,
 				2CED82772B8F7B7A002B5FE4 /* AstroWeatherApp.swift in Sources */,

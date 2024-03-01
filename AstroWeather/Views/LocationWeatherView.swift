@@ -77,7 +77,7 @@ struct LocationWeatherView: View {
             .padding()
         }
         .foregroundColor(viewModel.isNight ? .white : .black)
-        .background(Image(viewModel.weather?.icon ?? ""))
+        .background(viewModel.weather?.icon == nil ?  AnyView(Color.clear) : AnyView(Image(viewModel.weather?.icon ?? "")))
         .onAppear {
             Task {
                 await viewModel.loadLocationWeather()
