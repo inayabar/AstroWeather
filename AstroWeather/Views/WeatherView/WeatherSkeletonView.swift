@@ -23,6 +23,8 @@ struct WeatherSkeletonView: View {
         skeletonInfoView
         
         skeletonInfoView
+        
+        skeletonInfoView
     }
     
     var skeletonInfoView: some View {

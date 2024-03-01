@@ -28,22 +28,7 @@ struct LocationWeatherView: View {
                                 .font(.title2)
                         })
                     }
-                    .padding()
-                    
-                    if let sunrise = viewModel.sunrise, let sunset = viewModel.sunset {
-                        HStack(spacing: 32) {
-                            WeatherInfoContainer(title: "Amanecer", systemImage: "sunrise", content: {
-                                Text(sunrise)
-                                    .font(.title2)
-                            })
-                            
-                            WeatherInfoContainer(title: "Atardecer", systemImage: "sunset", content: {
-                                Text(sunset)
-                                    .font(.title2)
-                            })
-                        }
-                        .padding()
-                    }
+                    .padding([.horizontal, .bottom])
                     
                     HStack(spacing: 32) {
                         WeatherInfoContainer(title: "visibilidad", systemImage: "eye", content: {
@@ -66,11 +51,25 @@ struct LocationWeatherView: View {
                             }
                         })
                     }
-                    .padding()
+                    .padding([.horizontal, .bottom])
                     
                     WindView(wind: weather.wind)
-                        .padding()
+                        .padding([.horizontal, .bottom])
                     
+                    if let sunrise = viewModel.sunrise, let sunset = viewModel.sunset {
+                        HStack(spacing: 32) {
+                            WeatherInfoContainer(title: "Amanecer", systemImage: "sunrise", content: {
+                                Text(sunrise)
+                                    .font(.title2)
+                            })
+                            
+                            WeatherInfoContainer(title: "Atardecer", systemImage: "sunset", content: {
+                                Text(sunset)
+                                    .font(.title2)
+                            })
+                        }
+                        .padding([.horizontal, .bottom])
+                    }
                 } else {
                     WeatherSkeletonView(location: viewModel.location)
                 }
