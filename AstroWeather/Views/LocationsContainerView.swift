@@ -10,7 +10,7 @@ import SwiftUI
 struct LocationsContainerView: View {
     @ObservedObject var viewModel: LocationsViewModel
     @EnvironmentObject var viewModelFactory: ViewModelFactory
-    @State private var currentTab = 0
+    @AppStorage("currentTab") private var currentTab = 0
     
     var body: some View {
         TabView(selection: $currentTab,
