@@ -18,40 +18,58 @@ struct LocationWeatherView: View {
                         .padding([.top, .bottom])
                     
                     HStack(spacing: 32) {
-                        RoundedTranslucentBox {
+                        WeatherInfoContainer(title: "Humedad", systemImage: "humidity", content: {
+                            Text("\(weather.humidity) %")
+                                .font(.title2)
+                        })
+                        
+                        WeatherInfoContainer(title: "Sensación", systemImage: "thermometer.transmission", content: {
+                            Text("\(weather.feelsLike)º")
+                                .font(.title2)
+                        })
+                    }
+                    .padding()
+                    
+                    if let sunrise = viewModel.sunrise, let sunset = viewModel.sunset {
+                        HStack(spacing: 32) {
+                            WeatherInfoContainer(title: "Amanecer", systemImage: "sunrise", content: {
+                                Text(sunrise)
+                                    .font(.title2)
+                            })
+                            
+                            WeatherInfoContainer(title: "Atardecer", systemImage: "sunset", content: {
+                                Text(sunset)
+                                    .font(.title2)
+                            })
+                        }
+                        .padding()
+                    }
+                    
+                    HStack(spacing: 32) {
+                        WeatherInfoContainer(title: "visibilidad", systemImage: "eye", content: {
                             VStack(alignment: .leading) {
-                                Label("VISIBILIDAD", systemImage: "eye")
-                                    .font(.subheadline)
-                                    .padding(.bottom)
-                                
                                 Text("\(weather.formattedVisibility)")
                                     .font(.title2)
                                 
                                 Text(viewModel.visibilityDescription)
                                     .font(.caption)
                             }
-                            .padding()
-                        }
+                        })
                         
-                        RoundedTranslucentBox {
-                            VStack(alignment: .leading) {
-                                Label("NUBES", systemImage: "cloud")
-                                    .font(.subheadline)
-                                    .padding(.bottom)
-                                    .padding(.trailing)
-                                
+                        WeatherInfoContainer(title: "nubes", systemImage: "cloud", content: {
+                            VStack {
                                 Spacer()
                                 
                                 Text("\(weather.clouds.all) %")
                                     .font(.title2)
                                     .padding(.bottom)
                             }
-                            .padding()
-                        }
+                        })
                     }
                     .padding()
                     
                     WindView(wind: weather.wind)
+                        .padding()
                     
                 } else {
                     WeatherSkeletonView(location: viewModel.location)
@@ -60,7 +78,7 @@ struct LocationWeatherView: View {
             .padding()
         }
         .foregroundColor(viewModel.isNight ? .white : .black)
-        .background(Image(viewModel.icon ?? ""))
+        .background(Image(viewModel.weather?.icon ?? ""))
         .onAppear {
             Task {
                 await viewModel.loadLocationWeather()

@@ -35,6 +35,7 @@
 		2CED82D52B9109BD002B5FE4 /* WeatherSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82D42B9109BD002B5FE4 /* WeatherSummaryView.swift */; };
 		2CED82DB2B911730002B5FE4 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82DA2B911730002B5FE4 /* CompassView.swift */; };
 		2CED82DE2B911B8C002B5FE4 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82DD2B911B8C002B5FE4 /* WindView.swift */; };
+		2CED82E12B915B55002B5FE4 /* WeatherInfoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82E02B915B55002B5FE4 /* WeatherInfoContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		2CED82D42B9109BD002B5FE4 /* WeatherSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSummaryView.swift; sourceTree = "<group>"; };
 		2CED82DA2B911730002B5FE4 /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		2CED82DD2B911B8C002B5FE4 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
+		2CED82E02B915B55002B5FE4 /* WeatherInfoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				2CED82C92B9037F6002B5FE4 /* RoundedTranslucentBox.swift */,
 				2CED82CD2B90CE25002B5FE4 /* SkeletonRectangle.swift */,
 				2CED82DA2B911730002B5FE4 /* CompassView.swift */,
+				2CED82E02B915B55002B5FE4 /* WeatherInfoContainer.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				2CED82D52B9109BD002B5FE4 /* WeatherSummaryView.swift in Sources */,
 				2CED82C52B902EC7002B5FE4 /* MockWeatherFetcher.swift in Sources */,
 				2CED82AF2B8FB2F0002B5FE4 /* API.swift in Sources */,
+				2CED82E12B915B55002B5FE4 /* WeatherInfoContainer.swift in Sources */,
 				2CED82B52B8FB52F002B5FE4 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

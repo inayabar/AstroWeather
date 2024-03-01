@@ -27,6 +27,14 @@ struct WeatherData: Decodable {
         return Int(main.temp)
     }
     
+    var humidity: Int {
+        return main.humidity
+    }
+    
+    var feelsLike: Int {
+        return Int(main.feelsLike)
+    }
+    
     var minimumTemperature: Int {
         return Int(main.tempMin)
     }
