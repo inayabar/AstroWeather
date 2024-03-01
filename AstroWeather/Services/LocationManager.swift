@@ -25,6 +25,7 @@ class LocationManager: NSObject, LocationManagerProtocol {
     override init() {
         super.init()
         manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         manager.startUpdatingLocation()
         manager.requestWhenInUseAuthorization()
     }

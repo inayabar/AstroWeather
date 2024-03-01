@@ -12,15 +12,68 @@ class LocationWeatherViewModel: ObservableObject {
     @Published var weather: WeatherData? = nil
     @Published var isShowingError: Bool = false
     @Published var errorMessage = ""
-    
-    let location: Location
+    @Published var location: Location
     
     private let weatherFetcher: WeatherFetcher
+    private let dateFormatter = DateFormatter()
     
     
     init(location: Location, weatherFetcher: WeatherFetcher) {
         self.location = location
         self.weatherFetcher = weatherFetcher
+    }
+    
+    var isNight: Bool {
+        guard let icon = weather?.icon else {
+            return false
+        }
+        
+        return icon.contains("n")
+    }
+    
+    var locationName: String {
+        return weather?.name ?? location.name
+    }
+    
+    var isCurrentLocation: Bool {
+        return location.isCurrent
+    }
+    
+    var visibilityDescription: String {
+        guard let visibility = weather?.visibility else {
+            return ""
+        }
+        
+        switch visibility {
+        case 0..<1000:
+            return "Muy poca visibilidad"
+        case 1000..<3000:
+            return "Visibilidad reducida"
+        case 3000..<6000:
+            return "Visibilidad moderada"
+        case 6000...:
+            return "Completamente despejada"
+        default:
+            return ""
+        }
+    }
+    
+    var sunrise: String? {
+        guard let sunriseUnix = weather?.sys.sunrise else {
+            return nil
+        }
+        
+        let sunriseDate = Date(timeIntervalSince1970: sunriseUnix)
+        return formatDateAsHourAndMinutes(sunriseDate)
+    }
+    
+    var sunset: String? {
+        guard let sunsetUnix = weather?.sys.sunset else {
+            return nil
+        }
+        
+        let sunsetDate = Date(timeIntervalSince1970: sunsetUnix)
+        return formatDateAsHourAndMinutes(sunsetDate)
     }
     
     func loadLocationWeather() async {
@@ -32,12 +85,17 @@ class LocationWeatherViewModel: ObservableObject {
         }
     }
     
+    private func formatDateAsHourAndMinutes(_ date: Date) -> String {
+        dateFormatter.dateFormat = "HH:mm a"
+        return dateFormatter.string(from: date)
+    }
+    
     private func handleErrorMessage(_ error: Error) {
         if let error = error as? NetworkError {
             switch error {
             case .httpError(let statusCode):
                 self.errorMessage = "This location created an invalid request. Please try again (http code: \(statusCode))"
-            case .decodingError(let error):
+            case .decodingError(_):
                 self.errorMessage = "There was an error while parsing the response. Please try again"
             case .invalidUrlError:
                 self.errorMessage = "This location generated an invalid request. Please try again"
