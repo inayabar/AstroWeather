@@ -13,13 +13,23 @@ protocol WeatherFetcher {
 
 final class WeatherService: WeatherFetcher {
     let networkService: NetworkServiceProtocol
+    private let apiKey: String
     
     internal init(networkService: NetworkService) {
         self.networkService = networkService
+        
+        guard let filePath = Bundle.main.path(forResource: "Config", ofType: "plist"),
+              let plist = NSDictionary(contentsOfFile: filePath),
+              let apiKey = plist.object(forKey: "OPEN_WEATHER_API_KEY") as? String else {
+            self.apiKey = ""
+            return
+        }
+
+        self.apiKey = apiKey
     }
     
     func fetchWeather(for location: Location) async throws -> WeatherData {
-        guard let url = APIs.OpenWeatherMap.weather(latitude: location.latitude, longitude: location.longitude).url else {
+        guard var url = APIs.OpenWeatherMap.weather(latitude: location.latitude, longitude: location.longitude, appId: apiKey).url else {
             throw NetworkError.invalidUrlError
         }
         
