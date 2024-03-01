@@ -33,3 +33,9 @@ struct MockWeatherFetcher: WeatherFetcher {
         }
     }
 }
+
+struct FailingMockWeatherFetcher: WeatherFetcher {
+    func fetchWeather(for: Location) async throws -> WeatherData {
+        throw NetworkError.notConnectedToInternet
+    }
+}

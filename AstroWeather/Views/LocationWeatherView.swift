@@ -75,6 +75,8 @@ struct LocationWeatherView: View {
                 }
             }
             .padding()
+            
+            ErrorSnackbar(errorMessage: viewModel.errorMessage, isShowing: $viewModel.isShowingError, dismissAfter: 8.0)
         }
         .foregroundColor(viewModel.isNight ? .white : .black)
         .background(viewModel.weather?.icon == nil ?  AnyView(Color.clear) : AnyView(Image(viewModel.weather?.icon ?? "")))
@@ -88,5 +90,10 @@ struct LocationWeatherView: View {
 
 #Preview {
     let viewModel = LocationWeatherViewModel(location: MockLocation.current, weatherFetcher: MockWeatherFetcher())
+    return LocationWeatherView(viewModel: viewModel)
+}
+
+#Preview {
+    let viewModel = LocationWeatherViewModel(location: MockLocation.current, weatherFetcher: FailingMockWeatherFetcher())
     return LocationWeatherView(viewModel: viewModel)
 }
