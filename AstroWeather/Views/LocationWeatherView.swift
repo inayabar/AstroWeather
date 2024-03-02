@@ -70,6 +70,14 @@ struct LocationWeatherView: View {
                         }
                         .padding([.horizontal, .bottom])
                     }
+                    
+                    Button(action: {
+                        Task {
+                            await viewModel.loadLocationWeather(refresh: true)
+                        }
+                    }, label: {
+                        Label("Actualizado a las \(viewModel.lastWeatherUpdateFormatted)", systemImage: "arrow.clockwise")
+                    })
                 } else {
                     WeatherSkeletonView(location: viewModel.location)
                 }

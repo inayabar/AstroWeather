@@ -16,6 +16,7 @@ class LocationWeatherViewModel: ObservableObject {
     
     private let weatherFetcher: WeatherFetcher
     private let dateFormatter = DateFormatter()
+    private var weatherUpdatedAt: Date? = nil
     
     
     init(location: Location, weatherFetcher: WeatherFetcher) {
@@ -76,14 +77,23 @@ class LocationWeatherViewModel: ObservableObject {
         return formatDateAsHourAndMinutes(sunsetDate)
     }
     
-    func loadLocationWeather() async {
-        if let weather {
+    var lastWeatherUpdateFormatted: String {
+        guard let updatedAt = weatherUpdatedAt else {
+            return ""
+        }
+        
+        return formatDateAsHourAndMinutes(updatedAt)
+    }
+    
+    func loadLocationWeather(refresh: Bool = false) async {
+        if weather != nil && !refresh {
             return
         }
         
         do {
             let data = try await weatherFetcher.fetchWeather(for: location)
             weather = data
+            weatherUpdatedAt = Date()
         } catch {
             handleErrorMessage(error)
         }
