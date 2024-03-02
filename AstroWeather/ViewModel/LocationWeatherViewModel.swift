@@ -110,16 +110,16 @@ class LocationWeatherViewModel: ObservableObject {
         if let error = error as? NetworkError {
             switch error {
             case .httpError(let statusCode):
-                self.errorMessage = "This location created an invalid request. Please try again (http code: \(statusCode))"
+                self.errorMessage = "Esta ubicacion generó una solicitud invalida (Codigo http: \(statusCode))"
             case .decodingError(_):
-                self.errorMessage = "There was an error while parsing the response. Please try again"
+                self.errorMessage = "Hubo un error recibiendo los datos del clima. Por favor, intenta de nuevo."
             case .invalidUrlError:
-                self.errorMessage = "This location generated an invalid request. Please try again"
+                self.errorMessage = "Esta ubicación genero una solicitud invalida. Por favor, intenta de nuevo."
             case .notConnectedToInternet:
-                self.errorMessage = "It seems like you are offline! Please check your connection and try again"
+                self.errorMessage = "¡Parece que estás desconectado! Por favor, compruebe la conexión y vuelva a intentarlo"
             }
         } else {
-            self.errorMessage = "Oh no! Could not load more artworks. Please try again later"
+            self.errorMessage = "Ocurrió un error inesperado. Por favor, intenta de nuevo."
         }
         
         self.isShowingError = true

@@ -19,7 +19,7 @@ struct ErrorSnackbar: View {
                 HStack {
                     Image(systemName: "exclamationmark.triangle.fill")
                         .foregroundColor(.white)
-                    Text(errorMessage)
+                    Text(LocalizedStringKey(errorMessage))
                         .foregroundColor(.white)
                         .font(.subheadline)
                         .lineLimit(2)

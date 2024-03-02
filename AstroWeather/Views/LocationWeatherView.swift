@@ -18,12 +18,12 @@ struct LocationWeatherView: View {
                         .padding([.top, .bottom])
                     
                     HStack(spacing: 32) {
-                        WeatherInfoContainer(title: "Humedad", systemImage: "humidity", content: {
+                        WeatherInfoContainer(title: "HUMEDAD", systemImage: "humidity", content: {
                             Text("\(weather.humidity) %")
                                 .font(.title2)
                         })
                         
-                        WeatherInfoContainer(title: "Sensación", systemImage: "thermometer.transmission", content: {
+                        WeatherInfoContainer(title: "SENSACIÓN", systemImage: "thermometer.transmission", content: {
                             Text("\(weather.feelsLike)º")
                                 .font(.title2)
                         })
@@ -31,17 +31,17 @@ struct LocationWeatherView: View {
                     .padding([.horizontal, .bottom])
                     
                     HStack(spacing: 32) {
-                        WeatherInfoContainer(title: "visibilidad", systemImage: "eye", content: {
+                        WeatherInfoContainer(title: "VISIBILIDAD", systemImage: "eye", content: {
                             VStack(alignment: .leading) {
                                 Text("\(weather.formattedVisibility)")
                                     .font(.title2)
                                 
-                                Text(viewModel.visibilityDescription)
+                                Text(LocalizedStringKey(viewModel.visibilityDescription))
                                     .font(.caption)
                             }
                         })
                         
-                        WeatherInfoContainer(title: "nubes", systemImage: "cloud", content: {
+                        WeatherInfoContainer(title: "NUBES", systemImage: "cloud", content: {
                             VStack {
                                 Spacer()
                                 
@@ -58,12 +58,12 @@ struct LocationWeatherView: View {
                     
                     if let sunrise = viewModel.sunrise, let sunset = viewModel.sunset {
                         HStack(spacing: 32) {
-                            WeatherInfoContainer(title: "Amanecer", systemImage: "sunrise", content: {
+                            WeatherInfoContainer(title: "AMANECER", systemImage: "sunrise", content: {
                                 Text(sunrise)
                                     .font(.title2)
                             })
                             
-                            WeatherInfoContainer(title: "Atardecer", systemImage: "sunset", content: {
+                            WeatherInfoContainer(title: "ATARDECER", systemImage: "sunset", content: {
                                 Text(sunset)
                                     .font(.title2)
                             })
