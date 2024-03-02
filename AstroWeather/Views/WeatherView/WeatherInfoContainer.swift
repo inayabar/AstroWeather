@@ -15,7 +15,7 @@ struct WeatherInfoContainer<Content> : View where Content : View {
     var body: some View {
         RoundedTranslucentBox {
             VStack(alignment: .leading) {
-                Label(title.uppercased(), systemImage: systemImage)
+                Label(LocalizedStringKey(title), systemImage: systemImage)
                     .font(.subheadline)
                     .padding(.bottom)
                 

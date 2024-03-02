@@ -39,6 +39,7 @@
 		2CED82E32B917D00002B5FE4 /* ErrorSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82E22B917D00002B5FE4 /* ErrorSnackbar.swift */; };
 		2CED82E72B92459D002B5FE4 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CED82E62B92459D002B5FE4 /* Config.plist */; };
 		2CED82E92B924CC7002B5FE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CED82E82B924CC7002B5FE4 /* LaunchScreen.storyboard */; };
+		2CED82EC2B93C037002B5FE4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2CED82EB2B93C037002B5FE4 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		2CED82E22B917D00002B5FE4 /* ErrorSnackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSnackbar.swift; sourceTree = "<group>"; };
 		2CED82E62B92459D002B5FE4 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		2CED82E82B924CC7002B5FE4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2CED82EB2B93C037002B5FE4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		2CED82752B8F7B7A002B5FE4 /* AstroWeather */ = {
 			isa = PBXGroup;
 			children = (
+				2CED82EA2B93C00C002B5FE4 /* Resources */,
 				2CED82B92B8FBCAB002B5FE4 /* Services */,
 				2CED82A02B8F825B002B5FE4 /* Model */,
 				2CED82A32B8F83CA002B5FE4 /* Views */,
@@ -266,6 +269,14 @@
 			path = WeatherView;
 			sourceTree = "<group>";
 		};
+		2CED82EA2B93C00C002B5FE4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2CED82EB2B93C037002B5FE4 /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -347,11 +358,12 @@
 			};
 			buildConfigurationList = 2CED826E2B8F7B7A002B5FE4 /* Build configuration list for PBXProject "AstroWeather" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = es;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 2CED826A2B8F7B7A002B5FE4;
 			productRefGroup = 2CED82742B8F7B7A002B5FE4 /* Products */;
@@ -372,6 +384,7 @@
 			files = (
 				2CED82E72B92459D002B5FE4 /* Config.plist in Resources */,
 				2CED827E2B8F7B7D002B5FE4 /* Preview Assets.xcassets in Resources */,
+				2CED82EC2B93C037002B5FE4 /* Localizable.xcstrings in Resources */,
 				2CED827B2B8F7B7D002B5FE4 /* Assets.xcassets in Resources */,
 				2CED82E92B924CC7002B5FE4 /* LaunchScreen.storyboard in Resources */,
 				2CED82C72B902F47002B5FE4 /* mock_weather_data.json in Resources */,

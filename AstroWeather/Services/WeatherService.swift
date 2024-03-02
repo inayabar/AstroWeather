@@ -29,7 +29,9 @@ final class WeatherService: WeatherFetcher {
     }
     
     func fetchWeather(for location: Location) async throws -> WeatherData {
-        guard var url = APIs.OpenWeatherMap.weather(latitude: location.latitude, longitude: location.longitude, appId: apiKey).url else {
+        let languaje = Locale.current.languageCode ?? "es"
+
+        guard let url = APIs.OpenWeatherMap.weather(latitude: location.latitude, longitude: location.longitude, languaje: languaje, appId: apiKey).url else {
             throw NetworkError.invalidUrlError
         }
         
