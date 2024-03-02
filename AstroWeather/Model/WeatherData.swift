@@ -11,13 +11,10 @@ struct WeatherData: Decodable {
     private let weather: [Weather]
     private let main: Main
     let visibility: Int
-    private let dt: Int
-    private let timezone: Int
     let sys: Sys
     let wind: Wind
     let clouds: Clouds
     let name: String
-    
     
     var description: String? {
         return weather.first?.description
