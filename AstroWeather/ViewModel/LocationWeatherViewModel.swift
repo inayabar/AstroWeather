@@ -90,6 +90,8 @@ class LocationWeatherViewModel: ObservableObject {
             return
         }
         
+        weather = nil
+        
         do {
             let data = try await weatherFetcher.fetchWeather(for: location)
             weather = data
