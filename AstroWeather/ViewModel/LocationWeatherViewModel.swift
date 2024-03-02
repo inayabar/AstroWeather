@@ -77,6 +77,10 @@ class LocationWeatherViewModel: ObservableObject {
     }
     
     func loadLocationWeather() async {
+        if let weather {
+            return
+        }
+        
         do {
             let data = try await weatherFetcher.fetchWeather(for: location)
             weather = data
