@@ -1,6 +1,6 @@
-# AstroWeather iOS Coding Challenge
+# AstroWeather - iOS Coding Challenge
 
-### Author : Iñaki Yabar Bilbao (inayabarb@gmail.com)
+### Author: Iñaki Yabar Bilbao (inayabarb@gmail.com)
 
 ## Table of Contents
 
@@ -40,7 +40,7 @@ The project implements a basic network layer, which allows for remote data fetch
 The app utilizes user defaults to store and remember the last location the user viewed. This was achieved using the @AppStorage annotation which greatly simplifies accessing UserDefaults stored data.
 
 ### Localization
-AstroWeather supports localization by using XCode String Catalogs, and replacing hardcoded string values with `LocalizedStringKey(someText)`. Supported languages are English and Spanish(default)
+AstroWeather supports localization by using XCode String Catalogs, and replacing hardcoded string values with `LocalizedStringKey(someText)`. Information from OpenWeatherApi is also fetched using the correct locale. Supported languages are English and Spanish(default)
 
 ### UI Design
 The app is heavily inspired by Apple's Weather app. The main structure is a TabView with horizontal scroll, where each page represents a location's weather. A specific background image is selected, depending on the weather conditions and if it's daytime or nighttime. I didn't have access to high-quality images so I decided to generate them using AI. A simple win for this project would be to optimize this images, or even better, to create dynamic animations instead of using static images.
@@ -73,3 +73,9 @@ Steps:
 2. **Run Tests:**
 - Navigate to the Product menu.
 - Select "Test" or use the shortcut (⌘U) to run the test suite.
+
+
+## Screenshots
+<img width="263" alt="Screenshot 2024-03-03 at 13 48 35" src="https://github.com/inayabar/AstroWeather/assets/21232834/91471594-e75e-4125-881d-e4947c8d1d22">
+<img width="267" alt="Screenshot 2024-03-03 at 13 47 46" src="https://github.com/inayabar/AstroWeather/assets/21232834/8a6413cf-47bb-41bd-9676-5fb9978a1407">
+<img width="273" alt="Screenshot 2024-03-03 at 13 47 37" src="https://github.com/inayabar/AstroWeather/assets/21232834/17279066-fab8-4923-bf28-7de2f930c703">
