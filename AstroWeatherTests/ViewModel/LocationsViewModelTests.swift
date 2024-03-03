@@ -13,7 +13,7 @@ final class LocationsViewModelTests: XCTestCase {
     func testInit_whenLocationIsNotEnabled_shouldLoadDefaultLocations() throws {
         // Given
         let mockLocationManager = MockLocationManager()
-        mockLocationManager.coordinate = nil
+        mockLocationManager.currentLocation = nil
         
         // When
         let viewModel = LocationsViewModel(locationManager: mockLocationManager)
@@ -26,7 +26,7 @@ final class LocationsViewModelTests: XCTestCase {
     func testInit_whenLocationIsEnabled_shouldAppendCurrentLocation() throws {
         // Given
         let mockLocationManager = MockLocationManager()
-        mockLocationManager.coordinate = CLLocationCoordinate2D(latitude: -10.000, longitude: 20.000)
+        mockLocationManager.currentLocation = CLLocation(latitude: -10.000, longitude: 20.000)
         
         // When
         let viewModel = LocationsViewModel(locationManager: mockLocationManager)
@@ -39,11 +39,11 @@ final class LocationsViewModelTests: XCTestCase {
     func testLocationManagerDelegate_whenLocationHasChanged_shouldModifyCurrentLocation() throws {
         // Given
         let mockLocationManager = MockLocationManager()
-        mockLocationManager.coordinate = CLLocationCoordinate2D(latitude: -10.000, longitude: 20.000)
+        mockLocationManager.currentLocation = CLLocation(latitude: -10.000, longitude: 20.000)
         let viewModel = LocationsViewModel(locationManager: mockLocationManager)
         
         // When
-        mockLocationManager.coordinate = CLLocationCoordinate2D(latitude: -15.000, longitude: 25.000)
+        mockLocationManager.currentLocation = CLLocation(latitude: -15.000, longitude: 25.000)
         mockLocationManager.updateLocation()
         
         // Then

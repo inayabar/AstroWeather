@@ -10,32 +10,52 @@ import XCTest
 final class AstroWeatherUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
+    func testFirstLocationIsCurrent_WhenUserAcceptsLocationPermission() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
+        
+        // Wait for the location permission alert to appear
+        let monitor = addUIInterruptionMonitor(withDescription: "Location Permission") { (alert) -> Bool in
+            alert.buttons["Allow Once"].tap(); // Don't Allow
+            
+            return true;
         }
+        
+        app.swipeUp()
+        
+        sleep(5)
+        
+        let locationTitleText = app.staticTexts["San Francisco"]
+        
+        XCTAssertTrue(locationTitleText.waitForExistence(timeout: 5), "Location did not appear")
+
+        self.removeUIInterruptionMonitor(monitor)
+    }
+    
+    func testFirstLocationIsLondon_WhenUserDeniesLocationPermission() throws {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        
+        // Wait for the location permission alert to appear
+        let monitor = addUIInterruptionMonitor(withDescription: "Location Permission") { (alert) -> Bool in
+            alert.buttons["Don’t Allow"].tap(); 
+            
+            return true;
+        }
+        
+        app.swipeUp()
+        
+        sleep(5)
+        
+        let locationTitleText = app.staticTexts["London"]
+        
+        XCTAssertTrue(locationTitleText.waitForExistence(timeout: 5), "Location did not appear")
+        
+        self.removeUIInterruptionMonitor(monitor)
     }
 }

@@ -10,8 +10,8 @@ import CoreLocation
 @testable import AstroWeather
 
 final class MockLocationManager: LocationManagerProtocol {
+    var currentLocation: CLLocation?
     var delegate: AstroWeather.LocationManagerDelegate?
-    var coordinate: CLLocationCoordinate2D? = nil
     
     func updateLocation() {
         delegate?.didUpdateLocation()

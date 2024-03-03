@@ -14,13 +14,13 @@ protocol LocationManagerDelegate: AnyObject {
 
 protocol LocationManagerProtocol {
     var delegate: LocationManagerDelegate? { get set }
-    var coordinate: CLLocationCoordinate2D? { get set }
+    var currentLocation: CLLocation? { get set }
 }
 
 class LocationManager: NSObject, LocationManagerProtocol {
     weak var delegate: LocationManagerDelegate?
     let manager = CLLocationManager()
-    var coordinate: CLLocationCoordinate2D? = nil
+    var currentLocation: CLLocation? = nil
     
     override init() {
         super.init()
@@ -33,22 +33,32 @@ class LocationManager: NSObject, LocationManagerProtocol {
 
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else {
+        guard let newLocation = locations.first else {
             return
         }
         
-        coordinate = location.coordinate
-        delegate?.didUpdateLocation()
+        guard let currentLocation = currentLocation else {
+            self.currentLocation = newLocation
+            delegate?.didUpdateLocation()
+            return
+        }
+        
+        let distance = newLocation.distance(from: currentLocation)
+        
+        if distance >= kCLLocationAccuracyThreeKilometers {
+            self.currentLocation = newLocation
+            delegate?.didUpdateLocation()
+        }
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
-        case .authorizedWhenInUse:
+        case .authorizedWhenInUse, .authorizedAlways:
             manager.startUpdatingLocation()
             break
     
         case .restricted, .denied:
-            coordinate = nil
+            currentLocation = nil
             delegate?.didUpdateLocation()
             break
             
