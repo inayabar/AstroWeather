@@ -11,9 +11,7 @@
 		2CED82792B8F7B7A002B5FE4 /* LocationsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82782B8F7B7A002B5FE4 /* LocationsContainerView.swift */; };
 		2CED827B2B8F7B7D002B5FE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CED827A2B8F7B7D002B5FE4 /* Assets.xcassets */; };
 		2CED827E2B8F7B7D002B5FE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CED827D2B8F7B7D002B5FE4 /* Preview Assets.xcassets */; };
-		2CED82882B8F7B7D002B5FE4 /* AstroWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82872B8F7B7D002B5FE4 /* AstroWeatherTests.swift */; };
 		2CED82922B8F7B7D002B5FE4 /* AstroWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82912B8F7B7D002B5FE4 /* AstroWeatherUITests.swift */; };
-		2CED82942B8F7B7D002B5FE4 /* AstroWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82932B8F7B7D002B5FE4 /* AstroWeatherUITestsLaunchTests.swift */; };
 		2CED82A22B8F8286002B5FE4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A12B8F8286002B5FE4 /* Location.swift */; };
 		2CED82A52B8F86B6002B5FE4 /* LocationWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A42B8F86B6002B5FE4 /* LocationWeatherView.swift */; };
 		2CED82A82B8F86E5002B5FE4 /* LocationWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82A72B8F86E5002B5FE4 /* LocationWeatherViewModel.swift */; };
@@ -40,6 +38,9 @@
 		2CED82E72B92459D002B5FE4 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CED82E62B92459D002B5FE4 /* Config.plist */; };
 		2CED82E92B924CC7002B5FE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CED82E82B924CC7002B5FE4 /* LaunchScreen.storyboard */; };
 		2CED82EC2B93C037002B5FE4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2CED82EB2B93C037002B5FE4 /* Localizable.xcstrings */; };
+		2CED82FF2B941A73002B5FE4 /* LocationWeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED82FE2B941A73002B5FE4 /* LocationWeatherViewModelTests.swift */; };
+		2CED83012B94202A002B5FE4 /* LocationsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED83002B94202A002B5FE4 /* LocationsViewModelTests.swift */; };
+		2CED83042B9420E8002B5FE4 /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED83032B9420E8002B5FE4 /* MockLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +67,8 @@
 		2CED827A2B8F7B7D002B5FE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CED827D2B8F7B7D002B5FE4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CED82832B8F7B7D002B5FE4 /* AstroWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CED82872B8F7B7D002B5FE4 /* AstroWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroWeatherTests.swift; sourceTree = "<group>"; };
 		2CED828D2B8F7B7D002B5FE4 /* AstroWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstroWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CED82912B8F7B7D002B5FE4 /* AstroWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroWeatherUITests.swift; sourceTree = "<group>"; };
-		2CED82932B8F7B7D002B5FE4 /* AstroWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2CED82A12B8F8286002B5FE4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2CED82A42B8F86B6002B5FE4 /* LocationWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherView.swift; sourceTree = "<group>"; };
 		2CED82A72B8F86E5002B5FE4 /* LocationWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherViewModel.swift; sourceTree = "<group>"; };
@@ -96,6 +95,9 @@
 		2CED82E62B92459D002B5FE4 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		2CED82E82B924CC7002B5FE4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CED82EB2B93C037002B5FE4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		2CED82FE2B941A73002B5FE4 /* LocationWeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherViewModelTests.swift; sourceTree = "<group>"; };
+		2CED83002B94202A002B5FE4 /* LocationsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModelTests.swift; sourceTree = "<group>"; };
+		2CED83032B9420E8002B5FE4 /* MockLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +176,8 @@
 		2CED82862B8F7B7D002B5FE4 /* AstroWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				2CED82872B8F7B7D002B5FE4 /* AstroWeatherTests.swift */,
+				2CED83022B9420DD002B5FE4 /* Mocks */,
+				2CED82FD2B941A57002B5FE4 /* ViewModel */,
 			);
 			path = AstroWeatherTests;
 			sourceTree = "<group>";
@@ -183,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				2CED82912B8F7B7D002B5FE4 /* AstroWeatherUITests.swift */,
-				2CED82932B8F7B7D002B5FE4 /* AstroWeatherUITestsLaunchTests.swift */,
 			);
 			path = AstroWeatherUITests;
 			sourceTree = "<group>";
@@ -275,6 +277,23 @@
 				2CED82EB2B93C037002B5FE4 /* Localizable.xcstrings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2CED82FD2B941A57002B5FE4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2CED82FE2B941A73002B5FE4 /* LocationWeatherViewModelTests.swift */,
+				2CED83002B94202A002B5FE4 /* LocationsViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2CED83022B9420DD002B5FE4 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2CED83032B9420E8002B5FE4 /* MockLocationManager.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,7 +462,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CED82882B8F7B7D002B5FE4 /* AstroWeatherTests.swift in Sources */,
+				2CED82FF2B941A73002B5FE4 /* LocationWeatherViewModelTests.swift in Sources */,
+				2CED83012B94202A002B5FE4 /* LocationsViewModelTests.swift in Sources */,
+				2CED83042B9420E8002B5FE4 /* MockLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +473,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CED82922B8F7B7D002B5FE4 /* AstroWeatherUITests.swift in Sources */,
-				2CED82942B8F7B7D002B5FE4 /* AstroWeatherUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

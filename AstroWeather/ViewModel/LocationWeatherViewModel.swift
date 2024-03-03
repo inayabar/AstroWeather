@@ -96,6 +96,7 @@ class LocationWeatherViewModel: ObservableObject {
             let data = try await weatherFetcher.fetchWeather(for: location)
             weather = data
             weatherUpdatedAt = Date()
+            self.isShowingError = false
         } catch {
             handleErrorMessage(error)
         }
