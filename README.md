@@ -51,7 +51,7 @@ The app is heavily inspired by Apple's Weather app. The main structure is a TabV
 
 Requirements:
 - iOS 14+
-- Working Xcode 11+ installation
+- Working Xcode 15 installation (This project uses #Preview macro)
 
 Steps:
 1. **Clone the Repository:** ```git clone https://github.com/inayabar/AstroWeather```
