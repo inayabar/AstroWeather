@@ -14,15 +14,17 @@ struct WeatherSummaryView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            HStack {
-                Text(locationName)
-                    .font(.system(size: 32))
-                
-                if isCurrent {
+            if isCurrent {
+                HStack {
+                    Text("Mi ubicación")
+                        .padding(.leading)
                     Image(systemName: "location")
-                        .font(.system(size: 20))
+                        .font(.system(size: 16))
                 }
             }
+            
+            Text(locationName)
+                .font(.system(size: 32))
             
             Text("  \(weather.temperature)°")
                 .font(.system(size: 100))

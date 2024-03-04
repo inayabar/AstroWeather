@@ -186,6 +186,16 @@
         }
       }
     },
+    "Mi ubicación" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My location"
+          }
+        }
+      }
+    },
     "Muy poca visibilidad" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -33,7 +33,11 @@ class LocationWeatherViewModel: ObservableObject {
     }
     
     var locationName: String {
-        return weather?.name ?? location.name
+        guard let name = weather?.name else {
+            return location.name
+        }
+        
+        return location.isCurrent ? name : location.name
     }
     
     var isCurrentLocation: Bool {

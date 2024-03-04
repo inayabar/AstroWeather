@@ -35,7 +35,7 @@ final class LocationWeatherViewModelTests: XCTestCase {
         XCTAssertNotNil(viewModel.weather)
         XCTAssertFalse(viewModel.isShowingError)
         
-        XCTAssertEqual("Vicente López", viewModel.locationName)
+        XCTAssertEqual("London", viewModel.locationName)
         XCTAssertFalse(viewModel.isCurrentLocation)
         XCTAssertEqual("Completamente despejada", viewModel.visibilityDescription)
         XCTAssertNotNil(viewModel.sunrise)

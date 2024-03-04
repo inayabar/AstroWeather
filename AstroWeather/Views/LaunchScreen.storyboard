@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AstroWeather" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="81" y="261" width="231" height="43"/>
+                                <rect key="frame" x="81" y="213" width="231" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,9 +46,9 @@
                             <constraint firstItem="WqO-Tr-kYb" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="36" id="Cd3-Z4-cY4"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="centerX" secondItem="GJd-Yh-RWb" secondAttribute="centerX" id="Q3B-4B-g5h"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" symbolic="YES" id="SfN-ll-jLj"/>
-                            <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="16" id="as6-yO-All"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="64" id="as6-yO-All"/>
                             <constraint firstItem="WqO-Tr-kYb" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="gqU-69-mlj"/>
-                            <constraint firstItem="WqO-Tr-kYb" firstAttribute="bottom" secondItem="GJd-Yh-RWb" secondAttribute="top" constant="-16" id="q3c-vJ-znk"/>
+                            <constraint firstItem="WqO-Tr-kYb" firstAttribute="bottom" secondItem="GJd-Yh-RWb" secondAttribute="top" constant="32" id="q3c-vJ-znk"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" id="qXp-td-iOQ"/>
                         </constraints>
                     </view>

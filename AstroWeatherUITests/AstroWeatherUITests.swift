@@ -8,16 +8,18 @@
 import XCTest
 
 final class AstroWeatherUITests: XCTestCase {
-
+    var app: XCUIApplication!
+    
     override func setUpWithError() throws {
+        try super.setUpWithError()
         continueAfterFailure = false
+        
+        app = XCUIApplication()
+        app.resetAuthorizationStatus(for: .location)
+        app.launch()
     }
 
     func testFirstLocationIsCurrent_WhenUserAcceptsLocationPermission() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-        
         // Wait for the location permission alert to appear
         let monitor = addUIInterruptionMonitor(withDescription: "Location Permission") { (alert) -> Bool in
             alert.buttons["Allow Once"].tap(); // Don't Allow
@@ -25,11 +27,11 @@ final class AstroWeatherUITests: XCTestCase {
             return true;
         }
         
-        app.swipeUp()
+        app.tap()
         
         sleep(5)
         
-        let locationTitleText = app.staticTexts["San Francisco"]
+        let locationTitleText = app.staticTexts["My location"]
         
         XCTAssertTrue(locationTitleText.waitForExistence(timeout: 5), "Location did not appear")
 
@@ -37,10 +39,6 @@ final class AstroWeatherUITests: XCTestCase {
     }
     
     func testFirstLocationIsLondon_WhenUserDeniesLocationPermission() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-        
         // Wait for the location permission alert to appear
         let monitor = addUIInterruptionMonitor(withDescription: "Location Permission") { (alert) -> Bool in
             alert.buttons["Don’t Allow"].tap(); 
